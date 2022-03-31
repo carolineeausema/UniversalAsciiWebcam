@@ -12,7 +12,7 @@
 
 3  Install the required stuff (whatever installer u use)
 
-    pip install prereq.txt
+    pip install -r prereq.txt
 
 ### Run: 🎷🐛
 -  <code> py ascii-cam.py </code>
