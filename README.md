@@ -10,9 +10,9 @@
 
     cd /UniversalAsciiWebcam 
 
-3  Install the required stuff
+3  Install the required stuff (whatever installer u use)
 
-    pip install prereqs.txt
+    pip install prereq.txt
 
 ### Run: 🎷🐛
 -  <code> py ascii-cam.py </code>
