@@ -35,14 +35,15 @@ def main():
 
     while capture.isOpened():
         rvalue, frame = capture.read()
-        print(convert_to_ascii(frame))
+        print(convert_to_ascii(frame) + "\n\n\n\n")
+
         if (rvalue):
             cv2.imshow("woooah ur so cute", frame)
 # TODO: add break on KeyboardInterrupt
 
 
 # TODO: add adjustable height/width
-def convert_to_ascii(frame, num_columns = 60, num_rows = 17):
+def convert_to_ascii(frame, num_columns = 104, num_rows = 32):
   frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
   height, width = frame.shape # create template
@@ -63,14 +64,14 @@ def convert_to_ascii(frame, num_columns = 60, num_rows = 17):
         # calculates the average amt of lightness in graytone
         light = np.mean(frame[scale_height:comp_height, scale_width:comp_width])
         output += choose_chars(light) # gets the right ascii val
-    output += '\n'
+    output += "\n"
 
   return output
 
 
 # w3 recommend: ' .:-=+*#%@'
 def choose_chars(light):
-  scale = ' .;-=+*$@#?'
+  scale = " .,;-_>$&@"
   length = len(scale)
   return scale[min(int(light * length / 255), length - 1)]
 
